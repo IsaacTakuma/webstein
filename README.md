@@ -1,4 +1,21 @@
-# 事前準備
+# webStein
+
+## git
+
+### フォーマット
+
+- 1 行目：変更内容の要約（タイトル、概要）
+- 2 行目 ：空行
+- 3 行目以降：変更した理由（内容、詳細）
+
+### コミットの種類
+
+fix：バグ修正
+add：新規（ファイル）機能追加
+update：機能修正（バグではない）
+remove：削除（ファイル）
+
+## 事前準備
 
 ### nodebrew をインストール
 
@@ -14,9 +31,7 @@ nodebrew install-binary latest
 nodebrew use v{使いたいバージョン}
 ```
 
-# Gatsby 導入
-
-## プロジェクトの作成
+## Gatsby プロジェクトの作成
 
 ### プロジェクトをダウンロード
 
@@ -47,7 +62,7 @@ npm install --save-dev typescript
 npm i gatsby-source-filesystem
 ```
 
-# ブラウザに表示する
+## ブラウザに表示する
 
 ### Develop
 
