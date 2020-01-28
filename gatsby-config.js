@@ -20,6 +20,7 @@ module.exports = {
         name: `posts`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -31,7 +32,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `contents/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `contents/images/gatsby-icon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
