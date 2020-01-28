@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "easysass.excludeRegex": "^_+",
+    "easysass.targetDir": "./src/assets/css"
+  }
+}
