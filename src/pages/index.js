@@ -11,15 +11,21 @@ export default ({ data }) => {
       <SEO title="Home" />
       <div>
         <h1>MyBlog</h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+        <h4
+          style={{
+            margin: "8px 0 16px",
+          }}
+        >
+          {data.allMarkdownRemark.totalCount} Posts
+        </h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
+          <article key={node.id}>
             <span>
               {node.frontmatter.title} — {node.frontmatter.date}
             </span>
             <p>{node.excerpt}</p>
             <Link to={node.fields.slug}>read</Link>
-          </div>
+          </article>
         ))}
       </div>
     </Layout>
@@ -38,7 +44,7 @@ export const query = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "YYYY.MM.DD")
           }
           excerpt
         }
