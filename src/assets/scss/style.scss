@@ -53,8 +53,10 @@ main {
 footer {
   margin-top: 80px;
   padding: 24px 0;
+  width: 100%;
   background: rgba($color: $on_background, $alpha: 0.2);
   color: $sub-txt;
+  font-size: 1.4rem;
 }
 
 // ** others
