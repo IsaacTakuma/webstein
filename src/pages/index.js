@@ -20,11 +20,16 @@ export default ({ data }) => {
         </h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <article key={node.id}>
-            <span>
-              {node.frontmatter.title} — {node.frontmatter.date}
-            </span>
-            <p>{node.excerpt}</p>
-            <Link to={node.fields.slug}>read</Link>
+            <h2>{node.frontmatter.title}</h2>
+            <time>{node.frontmatter.date}</time>
+            <Link
+              className="category-link"
+              to={`category/${node.fields.category}/`}
+            >
+              {node.fields.category}
+            </Link>
+            <p className="excerpt">{node.excerpt}</p>
+            <Link to={node.fields.slug}>Read More</Link>
           </article>
         ))}
       </div>
@@ -41,6 +46,7 @@ export const query = graphql`
           id
           fields {
             slug
+            category
           }
           frontmatter {
             title

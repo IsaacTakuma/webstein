@@ -1,7 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
 
 class BlogPostTemplate extends React.Component {
@@ -12,19 +11,25 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <article>
-          <div>
-            <h1>{post.frontmatter.title}</h1>
-            <time>{post.frontmatter.date}</time>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
+        <article className="post">
+          <h1>{post.frontmatter.title}</h1>
+          <time>{post.frontmatter.date}</time>
+          <Link
+            className="category-link"
+            to={`category/${post.fields.category}/`}
+          >
+            {post.frontmatter.category}
+          </Link>
+          <div
+            className="post__wrap"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+          <Link to="/">Go back to the home</Link>
         </article>
       </Layout>
     )
   }
 }
-
-export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -41,7 +46,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "YYYY.MM.DD")
+        category
+      }
+      fields {
+        category
       }
     }
   }
 `
+
+export default BlogPostTemplate
