@@ -1,7 +1,20 @@
 ---
-title: "Hello World!"
+title: "コミットメッセージ"
 date: "2020-01-01"
-category: "neko"
+category: "tech"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## コミットメッセージ
+
+### フォーマット
+
+- 1 行目：変更内容の要約（タイトル、概要）
+- 2 行目：空行
+- 3 行目：変更した理由（内容、詳細）
+
+### コミットの種類
+
+- fix：バグ修正
+- add：新規（ファイル）機能追加
+- update：機能修正（バグではない）
+- remove：削除（ファイル）
