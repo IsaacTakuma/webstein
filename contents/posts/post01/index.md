@@ -2,6 +2,7 @@
 title: "コミットメッセージ"
 date: "2020-01-01"
 category: "tech"
+heroImage: "samune.png"
 ---
 
 ## コミットメッセージ

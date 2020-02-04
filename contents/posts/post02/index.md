@@ -2,6 +2,7 @@
 title: "GatsbyJsことはじめ"
 date: "2020-01-28"
 category: "Tech"
+heroImage: "samune.png"
 ---
 
 ## 事前準備

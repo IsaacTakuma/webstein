@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+
 import Layout from "../components/layout"
+import HeroImage from "../components/heroImage"
 import SEO from "../components/seo"
 
 class BlogPostTemplate extends React.Component {
@@ -12,13 +14,13 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <article className="post">
+          <HeroImage
+            filename={post.frontmatter.heroImage.relativePath}
+          ></HeroImage>
           <h1>{post.frontmatter.title}</h1>
-          <time>{post.frontmatter.date}</time>
-          <Link
-            className="category-link"
-            to={`category/${post.fields.category}/`}
-          >
-            {post.frontmatter.category}
+          <time style={{ margin: "0 8px 0 0" }}>{post.frontmatter.date}</time>
+          <Link to={`category/${post.fields.category}/`}>
+            {post.fields.category}
           </Link>
           <div
             className="post__wrap"
@@ -47,6 +49,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY.MM.DD")
         category
+        heroImage {
+          relativePath
+        }
       }
       fields {
         category
