@@ -26,7 +26,9 @@ export default ({ data }) => {
                 {node.fields.category}
               </Link>
               <p className="desc__summary">{node.excerpt}</p>
-              <Link className="toPost" to={node.fields.slug}></Link>
+              <Link className="toPost" to={node.fields.slug}>
+                Read More
+              </Link>
             </div>
           </article>
         ))}

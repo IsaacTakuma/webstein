@@ -68,15 +68,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `webStein;`,
+        short_name: `webStein;`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `contents/images/gatsby-icon.png`,
+        background_color: `#131424`,
+        theme_color: `#ea5e8f`,
+        display: `standalone`,
+        icon: `contents/images/logo-PWA.png`,
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-categories",
       options: {
