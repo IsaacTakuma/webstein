@@ -181,8 +181,9 @@
     font: 11px SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
     line-height: 10px;
   }
-  pre {
-    background: rgba($color: $color-background-on, $alpha: 0.5);
+  pre[class*="language-"] {
+    margin: 1.5em 0;
+    background: rgba($color: $color-background-on, $alpha: 1);
   }
   code {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
