@@ -2,12 +2,7 @@ import React from "react"
 
 const Footer = ({ siteTitle }) => (
   <footer>
-    <p
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-      }}
-    >
+    <p className="l-inner">
       <small>
         &copy; Copyright {new Date().getFullYear()} {siteTitle} All Rights
         Reserved.

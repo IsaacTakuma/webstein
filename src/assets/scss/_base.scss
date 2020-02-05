@@ -6,15 +6,28 @@
 
 ------------------------------ */
 
-$primary: #ea5e8f;
-$primary-light: #f4a5be;
-$primary-dark: #613545;
-
+$color-primary: #ea5e8f;
+$color-primary-light: #f4a5be;
+$color-primary-dark: rgba(
+  $color: $color-primary,
+  $alpha: 0.5
+);
 $color-txt: #f7ecde;
-$sub-txt: #8c88a8;
-
-$background: #131424;
-$on_background: #363a62;
+$color-txt-dark: rgba(
+  $color: $color-txt,
+  $alpha: 0.7
+);
+$color-txt-sub: #8c88a8;
+$color-background: #131424;
+$color-background-on: #363a62;
+$color-background-on-dark: rgba(
+  $color: $color-background-on,
+  $alpha: 0.6
+);
+$color-border: rgba(
+  $color: $color-txt-sub,
+  $alpha: 0.3
+);
 
 /* ------------------------------
 
@@ -23,22 +36,17 @@ $on_background: #363a62;
 ------------------------------ */
 
 html {
-  background-color: $background;
+  background-color: $color-background;
   font-size: 62.5%;
 }
 
 body {
-  background-color: $background;
+  background-color: $color-background;
   color: $color-txt;
   font-size: 1.6rem;
-  font-family: Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック",
-    "MS PGothic", sans-serif;
+  font-family: "Rubik", "Noto Sans JP", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN",
+    "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
   line-height: 1.25;
-}
-
-a {
-  color: $primary-light;
-  text-decoration: none;
 }
 
 /* ------------------------------
@@ -54,34 +62,7 @@ $sp: 750px; // スマホ
 //メディアクエリ
 $mq_pc: "screen and (min-width: #{$sp + 1px})";
 $mq_sp: "screen and (max-width: #{$sp})";
-
-.l-inner {
-  margin: 0 auto;
-  max-width: $container-size;
-  width: 100%;
-  @media #{$mq_sp} {
-    padding: 0 16px;
-  }
-}
-
-/* ------------------------------
-
-  表示 / 非表示
-
------------------------------- */
-
-.sp-none {
-  display: block;
-  @media #{$mq_sp} {
-    display: none;
-  }
-}
-
-.pc-none {
-  display: none;
-  @media #{$mq_sp} {
-    display: block;
-  }
+@media #{$mq_sp} {
 }
 
 /* ------------------------------
@@ -114,4 +95,47 @@ p {
 img {
   display: inline-block;
   vertical-align: bottom;
+}
+
+/* ------------------------------
+
+  表示 / 非表示
+
+------------------------------ */
+
+.sp-none {
+  display: block;
+  @media #{$mq_sp} {
+    display: none;
+  }
+}
+
+.pc-none {
+  display: none;
+  @media #{$mq_sp} {
+    display: block;
+  }
+}
+
+/* ------------------------------
+
+  mixin
+
+------------------------------ */
+
+@mixin tag {
+  position: relative;
+  z-index: 9;
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: $color-primary-dark;
+  color: $color-txt;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  transition: background 125ms ease-out;
+  &:hover {
+    background: $color-primary;
+    opacity: 1;
+  }
 }

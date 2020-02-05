@@ -13,20 +13,20 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <article className="post">
+        <article className="entry">
           <HeroImage
+            className="entry__samune"
             filename={post.frontmatter.heroImage.relativePath}
-          ></HeroImage>
-          <h1>{post.frontmatter.title}</h1>
-          <time style={{ margin: "0 8px 0 0" }}>{post.frontmatter.date}</time>
-          <Link to={`category/${post.fields.category}/`}>
+          />
+          <h2 className="entry__title">{post.frontmatter.title}</h2>
+          <time className="entry__time">{post.frontmatter.date}</time>
+          <Link className="entry__tag" to={`category/${post.fields.category}/`}>
             {post.fields.category}
           </Link>
           <div
-            className="post__wrap"
+            className="entry__content"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          <Link to="/">Go back to the home</Link>
         </article>
       </Layout>
     )

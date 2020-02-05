@@ -2,7 +2,7 @@
 
 @import "_reset.scss";
 @import "_base.scss";
-@import "_markdown.scss";
+@import "_post.scss";
 
 /* ------------------------------
 
@@ -14,42 +14,313 @@
 
 ------------------------------ */
 
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+.l-inner {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
+.menu-inner {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.contents {
+  margin: 0 0 0 180px;
+  padding: 0 20px;
+  width: calc(100% - 180px);
+  @media #{$mq_sp} {
+    margin-top: 72px;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
 // ** header
 header {
-  margin-bottom: 80px;
-  background: $on_background;
-  nav {
-    ul {
-      display: flex;
-    }
-    li {
-      list-style-type: none;
-      &:not(:last-child) {
-        margin-right: 6px;
-      }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100vh;
+  border-right: 2px solid rgba($color: #8c88a8, $alpha: 0.3);
+  background-color: rgba($color: $color-background-on, $alpha: 0.3);
+  @media #{$mq_sp} {
+    z-index: 1000;
+    width: 200px;
+    background: $color-background;
+    transition: transform 125ms ease-in;
+    transform: translateX(-100%);
+  }
+  .logo {
+    display: block;
+    margin: 1em auto;
+    width: 100px;
+    @media #{$mq_sp} {
+      width: 120px;
     }
   }
+  .news {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: $color-primary-dark;
+    font-size: 1.4rem;
+  }
+  .page-type {
+    display: inline-block;
+    margin: 2em 0 0.5em;
+    color: $color-txt-sub;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+  li {
+    list-style-type: none;
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+    a {
+      color: $color-txt-dark;
+      text-transform: capitalize;
+    }
+  }
+}
+.open {
+  transform: translateX(0%);
 }
 
 // ** main
 main {
-  article {
-    &:not(:last-child) {
-      margin-bottom: 32px;
-    }
+  display: flex;
+  align-items: center;
+  padding: 96px 0 0;
+  @media #{$mq_sp} {
+    padding: 40px 0 0;
   }
 }
 
 // ** footer
 footer {
-  margin-top: 80px;
-  padding: 24px 0;
-  width: 100%;
-  background: rgba($color: $on_background, $alpha: 0.2);
-  color: $sub-txt;
+  padding: 64px 0;
+  color: $color-txt-sub;
+  font-weight: 700;
   font-size: 1.4rem;
+  @media #{$mq_sp} {
+    margin: 32px -20px 0;
+    padding: 24px 20px;
+  }
 }
 
-.excerpt {
-  color: $sub-txt;
+// **	post
+.post-wrap {
+  position: relative;
+  padding: 64px 24px;
+  width: 100%;
+  border-radius: 3px;
+  // background-color: $color-background-on;
+  background: $color-background-on-dark;
+  font-weight: 700;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 24px;
+    padding: 6px 1em;
+    border: 4px solid $color-background;
+    border-radius: 3px;
+    background-color: $color-primary-dark;
+    content: "最新記事";
+    transform: translateY(-50%);
+  }
+  @media #{$mq_sp} {
+    padding: 3em 1em;
+  }
+}
+.post {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 0 6px;
+  pointer-events: none;
+  &:hover {
+    .samune,
+    .desc__title,
+    .desc__time,
+    .desc__tag,
+    .desc__summary {
+      opacity: 0.8;
+    }
+  }
+  &:not(:last-of-type) {
+    margin-bottom: 40px;
+    @media #{$mq_sp} {
+      margin-bottom: 32px;
+    }
+  }
+  @media #{$mq_sp} {
+    display: block;
+  }
+  .samune {
+    margin-right: 32px;
+    width: 30%;
+    border-radius: 3px;
+    transition: opacity 100ms ease-in;
+    @media #{$mq_sp} {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  .desc {
+    flex-basis: calc(70% - 32px);
+    margin-top: 4px;
+    @media #{$mq_sp} {
+      margin-top: 1em;
+    }
+    &__title {
+      width: 80%;
+      font-size: 1.8rem;
+      line-height: 1.25;
+      transition: opacity 100ms ease-in;
+      @media #{$mq_sp} {
+        width: 100%;
+      }
+    }
+    &__time {
+      display: inline-block;
+      margin-top: 8px;
+      margin-right: 4px;
+      color: $color-txt-dark;
+      font-size: 1.6rem;
+      transition: opacity 100ms ease-in;
+      @media #{$mq_sp} {
+        font-size: 1.2rem;
+      }
+    }
+    &__tag {
+      transition: opacity 100ms ease-in;
+      pointer-events: auto;
+
+      @include tag;
+      @media #{$mq_sp} {
+        font-size: 1.2rem;
+      }
+    }
+    &__summary {
+      overflow: hidden;
+      margin-top: 8px;
+      width: 100%;
+      height: calc(1.4rem * 1.5 * 3);
+      color: $color-txt-sub;
+      text-align: justify;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      transition: opacity 100ms ease-in;
+      @media #{$mq_sp} {
+        display: none;
+      }
+    }
+  }
+  .toPost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+  }
+}
+
+// **	entry
+.entry {
+  position: relative;
+  margin: 0 auto;
+  padding: 62px 40px;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 3px;
+  background: $color-background-on-dark;
+  @media #{$mq_sp} {
+    padding: 3em 20px;
+  }
+  &__samune {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  &__title {
+    margin-top: 2em;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 1.5;
+    @media #{$mq_sp} {
+      margin-top: 1em;
+      font-size: 2.2rem;
+      line-height: 1.25;
+    }
+  }
+  &__time {
+    display: inline-block;
+    margin: 1em 0 40px;
+    margin-right: 0.5em;
+    color: $color-txt-dark;
+
+    @media #{$mq_sp} {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+  &__tag {
+    @include tag;
+    @media #{$mq_sp} {
+      margin: 1em 0;
+    }
+  }
+  &__content {
+    padding: 24px 0;
+    width: 100%;
+  }
+  .toHome {
+    display: block;
+    margin-top: 32px;
+    text-align: center;
+  }
+}
+
+.sp-menu {
+  position: fixed;
+  right: 20px;
+  bottom: 14px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: $color-primary;
+  font-weight: bold;
+}
+.sp-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  padding: 0px 20px;
+  width: 100%;
+  height: 44px;
+  border-bottom: 2px solid $color-border;
+  background-color: $color-background;
+  .sp-logo {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    width: 100px;
+    filter: drop-shadow(1px 1px 2px #121212);
+    transition: opacity 150ms ease-in;
+    transform: translateX(-50%);
+  }
+}
+.none {
+  opacity: 0;
 }

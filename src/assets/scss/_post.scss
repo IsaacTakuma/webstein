@@ -1,0 +1,198 @@
+@import "_base.scss";
+
+.entry__content {
+  line-height: 1.8;
+  a:hover {
+    text-decoration: underline;
+  }
+  p {
+    margin-bottom: 1em;
+    text-align: justify;
+  }
+  // 見出し
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 40px 0 10px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  h2 {
+    margin: 54px 0 16px;
+    font-size: 2.6rem;
+  }
+  h3 {
+    position: relative;
+    margin: 54px 0 16px;
+    padding-left: 1.2em;
+    font-size: 2.2rem;
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0.5em;
+      border-top: 4px solid $color-primary;
+      content: "";
+      transform: translateY(-50%);
+    }
+  }
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  // 画像
+  img {
+    overflow: hidden;
+    margin: 1em 0;
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  // リスト
+  ul,
+  ol {
+    margin: 1em 0;
+    p {
+      margin: 0;
+    }
+  }
+  ul {
+    padding-left: 26px;
+  }
+  ul li {
+    margin: 0.4em 0;
+    list-style: disc;
+  }
+  ul ul {
+    margin: 0;
+  }
+  ol {
+    counter-reset: number;
+    & > li {
+      position: relative;
+      margin: 1em 0;
+      padding-left: 34px;
+      list-style: none;
+      list-style-position: inside;
+      line-height: 25px;
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        content: counter(number);
+        counter-increment: number;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 25px;
+      }
+    }
+  }
+
+  // テーブル
+  table {
+    display: block;
+    overflow: auto;
+    width: auto;
+    border-spacing: 2px;
+    border-collapse: separate;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    th {
+      padding: 10px 12px;
+      text-align: center;
+      font-weight: 700;
+      &[align="center"] {
+        text-align: center;
+      }
+      &[align="right"] {
+        text-align: right;
+      }
+    }
+    td {
+      padding: 10px 12px;
+    }
+    thead tr {
+      background-color: $color-primary-dark;
+      th:first-child {
+        border-radius: 3px 0 0 0;
+      }
+      th:last-child {
+        border-radius: 0 3px 0 0;
+      }
+    }
+    tbody tr {
+      background-color: $color-background-on;
+      &:last-child {
+        td:first-child {
+          border-radius: 0 0 0 3px;
+        }
+        td:last-child {
+          border-radius: 0 0 3px 0;
+        }
+      }
+    }
+  }
+
+  // テキスト装飾
+  strong {
+    font-weight: 700;
+  }
+  em {
+    font-style: italic;
+  }
+  del {
+    text-decoration: line-through;
+  }
+
+  // 水平線
+  hr {
+    display: block;
+    margin: 2em 0;
+    border: none;
+    border-top: 2px solid $color-border;
+  }
+
+  // 引用
+  blockquote {
+    margin: 2.3em 0;
+    padding: 1em;
+    background: $color-background-on;
+    font-style: italic;
+    p {
+      margin: 0.3em 0;
+    }
+  }
+  // code
+  kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    border: 1px solid #d1d5da;
+    border-bottom-color: #c6cbd1;
+    border-radius: 3px;
+    background-color: #fafbfc;
+    box-shadow: inset 0 -1px 0 #c6cbd1;
+    color: #444d56;
+    vertical-align: middle;
+    font: 11px SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    line-height: 10px;
+  }
+  pre {
+    background: rgba($color: $color-background-on, $alpha: 0.5);
+  }
+  code {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    opacity: 0.8;
+  }
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: $color-primary;
+  }
+}

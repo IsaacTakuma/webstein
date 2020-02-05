@@ -10,29 +10,28 @@ const CategoryTemplate = ({ location, pageContext, data }) => {
   return (
     <Layout location={location}>
       <SEO title={category} />
-      <h2>Category: {category}</h2>
-      <h4
-        style={{
-          margin: "8px 0 16px",
-        }}
-      >
-        {data.allMarkdownRemark.totalCount} Posts
-      </h4>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <article key={node.id}>
-          <HeroImage
-            filename={node.frontmatter.heroImage.relativePath}
-          ></HeroImage>
-          <h3>{node.frontmatter.title}</h3>
-          <time style={{ margin: "0 8px 0 0" }}>{node.frontmatter.date}</time>
-          <Link to={`category/${node.fields.category}/`}>
-            {node.fields.category}
-          </Link>
-          <p className="excerpt">{node.excerpt}</p>
-          <Link to={node.fields.slug}>Read More</Link>
-        </article>
-      ))}
-      <Link to="/">Go back to the home</Link>
+      <div className="post-wrap">
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <article className="post" key={node.id}>
+            <HeroImage
+              className="samune"
+              filename={node.frontmatter.heroImage.relativePath}
+            />
+            <div className="desc">
+              <h3 className="desc__title">{node.frontmatter.title}</h3>
+              <time className="desc__time">{node.frontmatter.date}</time>
+              <Link
+                className="desc__tag"
+                to={`category/${node.fields.category}`}
+              >
+                {node.fields.category}
+              </Link>
+              <p className="desc__summary">{node.excerpt}</p>
+              <Link className="toPost" to={node.fields.slug}></Link>
+            </div>
+          </article>
+        ))}
+      </div>
     </Layout>
   )
 }

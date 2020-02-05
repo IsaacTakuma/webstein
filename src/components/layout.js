@@ -4,6 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+import Menu from "./menu"
+import "typeface-rubik"
 import "../assets/css/style.css"
 
 const Layout = ({ children }) => {
@@ -20,16 +22,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
+      <div className="contents">
+        <main className="l-inner">{children}</main>
+        <Footer siteTitle={data.site.siteMetadata.title} />
       </div>
-      <Footer siteTitle={data.site.siteMetadata.title} />
+      <Menu />
     </>
   )
 }
