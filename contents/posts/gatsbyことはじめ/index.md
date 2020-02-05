@@ -1,9 +1,11 @@
 ---
 title: "GatsbyJsことはじめ"
-date: "2020-01-28"
+date: "2020-02-06"
 category: "Tech"
-heroImage: "samune.png"
+heroImage: "gatsby.png"
 ---
+
+GatsbyJs の導入からブラウザに表示までを解説。
 
 ## 事前準備
 
