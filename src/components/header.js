@@ -31,9 +31,6 @@ const Header = () => (
         <li>
           <Link to="/category/tech">tech</Link>
         </li>
-        <li>
-          <Link to="/category/essay">essay</Link>
-        </li>
       </ul>
     </div>
   </header>
