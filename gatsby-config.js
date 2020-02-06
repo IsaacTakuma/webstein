@@ -33,6 +33,14 @@ module.exports = {
             },
           },
           {
+            resolve: "gatsby-remark-embed-youtube",
+            options: {
+              width: 1920,
+              height: 1080,
+            },
+          },
+          "gatsby-remark-responsive-iframe",
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",
