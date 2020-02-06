@@ -54,7 +54,7 @@ npm i -g gatsby-cli
 ### Typescript のインストール
 
 ```Bash
-npm install --save-dev typescript
+npm i typescript
 ```
 
 ### ファイルを管理するツールのインストール
