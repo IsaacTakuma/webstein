@@ -3,8 +3,10 @@ module.exports = {
     title: `webStein;`,
     description: `備忘録`,
     author: `@isaacmaenu`,
+    siteUrl: `https://www.webstein.tech`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
