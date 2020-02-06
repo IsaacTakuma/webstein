@@ -39,7 +39,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -p 4000 -o",
+    "develop": "gatsby develop -p 8001 -o",
     "clean": "gatsby clean"
   },
   "repository": {
