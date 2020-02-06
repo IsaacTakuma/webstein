@@ -1,11 +1,20 @@
 ---
 title: "GatsbyJsことはじめ"
 date: "2020-02-06"
-category: "Tech"
+category: "gatsby"
 heroImage: "gatsby.png"
 ---
 
 GatsbyJs の導入からブラウザに表示までを解説。
+
+---
+
+## 目次
+
+> - 事前準備
+> - Gatsby プロジェクトの作成
+> - 必要なプラグインをインストール
+> - ブラウザに表示
 
 ## 事前準備
 
