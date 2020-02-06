@@ -4,6 +4,7 @@ module.exports = {
     description: `備忘録`,
     author: `@isaacmaenu`,
     siteUrl: `https://www.webstein.tech`,
+    image: "./coontents/imgaes/ogp.png",
   },
   plugins: [
     `gatsby-plugin-sitemap`,
