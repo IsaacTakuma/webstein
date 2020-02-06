@@ -190,6 +190,10 @@
     margin: 1.5em 0;
     background: rgba($color: $color-background-on, $alpha: 1);
   }
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    background: rgba($color: $color-background-on, $alpha: 1);
+  }
   code {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     opacity: 0.8;
