@@ -5,7 +5,7 @@ category: "tech"
 heroImage: "markdown.png"
 ---
 
-catnose 氏 [(Twitter)](https://twitter.com/catnose99) のやり方を真似て、マークダウンでの表現一覧をここにまとめる。
+CatNose 氏 [(@catnose99)](https://twitter.com/catnose99) のやり方を真似て、マークダウンでの表現一覧をここにまとめる。
 
 ## 見出し
 
@@ -83,6 +83,14 @@ _イタリック_
 
 ---
 
+## 引用
+
+> 引用文
+>
+> > ネストされた引用文
+
+---
+
 ## テーブル
 
 ```Markdown
@@ -129,11 +137,9 @@ body {
 
 ## 埋め込み
 
-https://twitter.com/isaacmaenu/status/1224944238795735041?s=20
-
-`twitter:https://twitter.com/isaacmaenu/status/1224944238795735041?s=20`
-
-https://www.youtube.com/embed/19R93fiKyRA
+```Markdown
+`youtube:https://www.youtube.com/embed/19R93fiKyRA`
+```
 
 `youtube:https://www.youtube.com/embed/19R93fiKyRA`
 
