@@ -39,7 +39,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -p 8001 -o",
+    "develop": "gatsby develop -p 8003 -o",
     "clean": "gatsby clean",
     "deploy": "gatsby build && firebase deploy"
   },
