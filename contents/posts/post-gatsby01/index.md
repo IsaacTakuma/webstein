@@ -1,11 +1,12 @@
 ---
-title: "GatsbyJsことはじめ"
+title: "ふれてみる | GatsbyJsことはじめ01"
 date: "2020-02-06"
 category: "gatsby"
 heroImage: "gatsby.png"
+num: "01"
 ---
 
-GatsbyJs の導入からブラウザに表示までを解説。
+GatsbyJs の導入からブラウザに表示までを解説するよ。
 
 ---
 
