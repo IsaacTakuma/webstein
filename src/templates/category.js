@@ -11,6 +11,7 @@ const CategoryTemplate = ({ location, pageContext, data }) => {
     <Layout location={location}>
       <SEO title={category} />
       <div className="post-wrap">
+        <h2 className="post-wrap__title">{category}</h2>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <article className="post" key={node.id}>
             <HeroImage
@@ -41,7 +42,7 @@ const CategoryTemplate = ({ location, pageContext, data }) => {
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
     allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { order: ASC, fields: frontmatter___num }
       filter: { fields: { category: { eq: $category } } }
     ) {
       totalCount

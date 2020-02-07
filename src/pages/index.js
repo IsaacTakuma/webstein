@@ -10,6 +10,7 @@ export default ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <div className="post-wrap">
+        <h2 className="post-wrap__title">最新記事</h2>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <article className="post" key={node.id}>
             <HeroImage
