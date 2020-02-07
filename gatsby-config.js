@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `webStein;`,
-    description: `備忘録`,
+    description: `webStein;はGatsbyJsで作られた備忘録兼ブログです。`,
     author: `@isaacmaenu`,
-    siteUrl: `https://www.webstein.tech`,
-    image: "./coontents/imgaes/ogp.png",
+    siteUrl: `https://webstein.tech`,
+    image: `https://webstein.tech/contents/images/ogp.png`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.webstein.tech`,
+        siteUrl: `https://webstein.tech`,
       },
     },
     {
