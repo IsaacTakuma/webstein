@@ -25,9 +25,6 @@ class Menu extends React.Component {
             />
           </Link>
         </div>
-        <div className="sp-menu" id="js-menu">
-          三
-        </div>
       </div>
     )
   }
