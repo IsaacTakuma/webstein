@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 export default ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="" />
       <div className="post-wrap">
         <h2 className="post-wrap__title">最新記事</h2>
         {data.allMarkdownRemark.edges.map(({ node }) => (

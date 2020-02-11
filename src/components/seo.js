@@ -21,13 +21,14 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogpImage = site.siteMetadata.image
+  const defaultTitle = "webStein; | まえんぬの個人ブログ"
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
+      defaultTitle={defaultTitle}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
@@ -37,7 +38,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: title || defaultTitle,
         },
         {
           property: `og:description`,
@@ -49,7 +50,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: ogpImage,
+          content: `${site.siteMetadata.siteUrl}/images/ogp.png`,
         },
         {
           name: `twitter:card`,
