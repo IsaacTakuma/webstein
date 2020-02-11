@@ -4,7 +4,6 @@ module.exports = {
     description: `webStein;はGatsbyJsで作られた備忘録兼ブログです。`,
     author: `@isaacmaenu`,
     siteUrl: `https://webstein.tech`,
-    image: `https://webstein.tech/contents/images/ogp.png`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,

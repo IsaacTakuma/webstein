@@ -13,7 +13,6 @@ function SEO({ description, lang, meta, title }) {
             description
             author
             siteUrl
-            image
           }
         }
       }
@@ -50,7 +49,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `${site.siteMetadata.siteUrl}/images/ogp.png`,
+          content: `https://webstein.tech/static/ecaadb0e19db877c962e5092ad92e2cd/497c6/ogp.png`,
         },
         {
           name: `twitter:card`,
