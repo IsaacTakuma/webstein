@@ -44,12 +44,16 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
           property: `og:image`,
           content: `https://webstein.tech/static/ecaadb0e19db877c962e5092ad92e2cd/497c6/ogp.png`,
+        },
+        {
+          property: `og:url`,
+          content: "https://webstein.tech/",
+        },
+        {
+          property: `og:type`,
+          content: `website`,
         },
         {
           name: `twitter:card`,
